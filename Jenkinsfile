@@ -22,7 +22,7 @@ pipeline{
             }
   
         }
-        stage{"Post-Build"}{
+        stage("Post-Build"){
             steps{
                 archiveArtifacts artifacts: 'target/*.jar', followSymlinks: false
             }
