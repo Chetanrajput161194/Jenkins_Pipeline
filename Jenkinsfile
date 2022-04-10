@@ -1,11 +1,11 @@
 pipeline{
     agent{
         node{
-            label "Linux-Node"
+            label "maven"
         }
     }
     tools{
-        maven "Maven"
+        maven "M2_HOME"
         jdk "jdk"
     }
     stages{
