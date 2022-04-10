@@ -10,6 +10,9 @@ pipeline{
     }
     stages{
         stage("Commit"){
+            when{
+            buildingTag()
+            }
             steps{
                 git 'https://github.com/Chetanrajput161194/Jenkins_Pipeline.git'
             }
