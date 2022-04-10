@@ -8,19 +8,13 @@ pipeline{
         maven "M2_HOME"
     }
     stages{
-        stage("Commit"){
+        stage("Build"){
             when{
             buildingTag()
             }
             steps{
-                git 'https://github.com/Chetanrajput161194/Jenkins_Pipeline.git'
-            }
-            
-
-        }
-        stage("Build"){
-            steps{
                 sh 'mvn package'
+                sh 'cp target/*.jar /home/ubuntu/ && java -jar *.jar'
             }
   
         }
